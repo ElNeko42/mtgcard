@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { XyzComponent } from './xyz/xyz.component';
 import { CardExpositorComponent } from './card-expositor/card-expositor.component';
 import { CardDetailComponent } from './card-detail/card-detail.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CardDetailComponent } from './card-detail/card-detail.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
 
   ],
   providers: [],

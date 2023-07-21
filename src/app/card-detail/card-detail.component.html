@@ -1,1 +1,24 @@
-<p>card-detail works!</p>
+<div class="card-detail">
+    <div class="card-image">
+        <img [src]="card.image_uris.normal" alt="{{ card.name }}">
+    </div>
+    <div class="card-text">
+        <h1>{{ card.name }}</h1>
+        <p>{{ card.type_line }}</p>
+        <p>{{ card.oracle_text }}</p>
+        <p>{{ card.power }}/{{ card.toughness }}</p>
+        <p>Ilustrado por {{ card.artist }}</p>
+    </div>
+    <div class="card-legality">
+        <table>
+            <tr>
+                <th>Formato</th>
+                <th>Legalidad</th>
+            </tr>
+            <tr *ngFor="let legality of card.legalities">
+                <td>{{ legality.format }}</td>
+                <td>{{ legality.legality }}</td>
+            </tr>
+        </table>
+    </div>
+</div>
