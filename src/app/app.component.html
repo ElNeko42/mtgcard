@@ -22,7 +22,7 @@
             height: 60px;
             display: flex;
             align-items: center;
-            background-color: #ff7f00; /* Cambiado a naranja */
+            background-color: #ff7f00; 
             color: white;
             font-weight: 600;
         }
@@ -47,27 +47,10 @@
         }
 
         body {
-            background-color: orange;
             font-family: Arial, sans-serif;
-            color: white;
+            color: black;
             text-align: center;
             padding: 50px;
-        }
-
-        .card {
-            background: white;
-            display: inline-block;
-            margin: 20px;
-            width: 200px;
-            height: 300px;
-            color: black;
-            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.19), 0px 6px 6px rgba(0, 0, 0, 0.23);
-            transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-        }
-
-        .card:hover {
-            box-shadow: 0px 14px 28px rgba(0, 0, 0, 0.25), 0px 10px 10px rgba(0, 0, 0, 0.22);
-            transform: translateY(-3px);
         }
     </style>
 </head>
@@ -80,12 +63,6 @@
         />
         <span>Welcome</span>
     </div>
-
-    <h1>Bienvenido a la página web de cartas Magic</h1>
-    <div class="card" *ngFor="let card of cards">
-        <h2>{{ card.name }}</h2>
-        <img [src]="card.image_uris.normal" alt="{{ card.name }}">
-        <p>{{ card.oracle_text }}</p>
-    </div>
+    <router-outlet></router-outlet>
 </body>
 </html>
