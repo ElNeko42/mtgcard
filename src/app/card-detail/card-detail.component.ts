@@ -25,5 +25,4 @@ export class CardDetailComponent implements OnInit {
       // Manejar el caso en el que id es null, por ejemplo redirigir a una página de error
     }
   }
-  
 }

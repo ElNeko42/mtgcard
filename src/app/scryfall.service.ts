@@ -6,14 +6,13 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ScryfallService {
-  private baseUrl = 'https://api.scryfall.com'; // Asegúrate de que esta es la URL base correcta
+  private baseUrl = 'https://api.scryfall.com'; 
 
   constructor(private http: HttpClient) { }
 
   getCards(): Observable<any> {
-    return this.http.get(`${this.baseUrl}/cards/search?q=c%3Awhite+pow%3D3`);
+    return this.http.get(`${this.baseUrl}/cards/search?q=set:m21&format`);
   }
-
   getCard(id: string): Observable<any> {
     return this.http.get(`${this.baseUrl}/cards/${id}`);
   }

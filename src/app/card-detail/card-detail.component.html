@@ -8,17 +8,24 @@
         <p>{{ card.oracle_text }}</p>
         <p>{{ card.power }}/{{ card.toughness }}</p>
         <p>Ilustrado por {{ card.artist }}</p>
-    </div>
-    <div class="card-legality">
-        <table>
-            <tr>
-                <th>Formato</th>
-                <th>Legalidad</th>
-            </tr>
-            <tr *ngFor="let legality of card.legalities">
-                <td>{{ legality.format }}</td>
-                <td>{{ legality.legality }}</td>
-            </tr>
-        </table>
+        <mat-accordion>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Legalidades
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <table>
+                    <tr>
+                        <th>Formato</th>
+                        <th>Legalidad</th>
+                    </tr>
+                    <tr *ngFor="let legality of card.legalities">
+                        <td>{{ legality.format }}</td>
+                        <td>{{ legality.legality }}</td>
+                    </tr>
+                </table>
+            </mat-expansion-panel>
+        </mat-accordion>
     </div>
 </div>

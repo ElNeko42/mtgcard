@@ -1,31 +1,14 @@
 .card-detail {
     display: flex;
     justify-content: space-between;
-    padding: 20px;
-    .card-image {
-        flex: 1;
-        img {
-            max-width: 100%;
-        }
-    }
-    .card-text {
-        flex: 2;
-        padding: 0px;
-        h1 {
-            font-size: 2em;
-        }
-        p {
-            font-size: 1.2em;
-        }
-    }
-    .card-legality {
-        flex: 1;
-        table {
-            width: 100%;
-            th, td {
-                padding: 10px;
-                text-align: left;
-            }
-        }
-    }
+    align-items: flex-start;
+}
+
+.card-image {
+    flex: 1;
+    margin-right: 5px;
+}
+
+.card-text {
+    flex: 2;
 }

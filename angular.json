@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "mtgcard": {
+    "my-new-project": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/mtgcard",
+            "outputPath": "dist/my-new-project",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -66,10 +66,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "mtgcard:build:production"
+              "browserTarget": "my-new-project:build:production"
             },
             "development": {
-              "browserTarget": "mtgcard:build:development"
+              "browserTarget": "my-new-project:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -77,7 +77,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "mtgcard:build"
+            "browserTarget": "my-new-project:build"
           }
         },
         "test": {
@@ -104,6 +104,6 @@
     }
   },
   "cli": {
-    "analytics": "3c5eef4c-e9b1-4518-b234-96ca9b4c3749"
+    "analytics": "5a87a6df-5c9e-4fcd-a03a-47aa05699617"
   }
 }
