@@ -28,4 +28,18 @@
             </mat-expansion-panel>
         </mat-accordion>
     </div>
+    <div class="card-price">
+        <h2>{{ card.set_name }} ({{ card.set }})</h2>
+        <p>#{{ card.collector_number }} · {{ card.rarity }} · {{ card.lang }}</p>
+        <div class="price-list">
+            <div *ngIf="card.prices.usd">
+                <i class="material-icons">attach_money</i>
+                <p>{{ card.prices.usd }}</p>
+            </div>
+            <div *ngIf="card.prices.eur">
+                <i class="material-icons">euro_symbol</i>
+                <p>{{ card.prices.eur }}</p>
+            </div>
+        </div>
+    </div>
 </div>

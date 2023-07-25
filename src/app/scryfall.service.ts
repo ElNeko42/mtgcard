@@ -16,4 +16,8 @@ export class ScryfallService {
   getCard(id: string): Observable<any> {
     return this.http.get(`${this.baseUrl}/cards/${id}`);
   }
+  getCardLanguages(id: string): Observable<any> {
+    return this.http.get(`${this.baseUrl}/cards/search?unique=prints&q=id:${id}`);
+}
+
 }

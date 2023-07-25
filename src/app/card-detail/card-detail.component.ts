@@ -10,6 +10,7 @@ import { ScryfallService } from '../scryfall.service';
 export class CardDetailComponent implements OnInit {
   card: any;
   legalities: any;
+  lenguages:any;
 
   constructor(
     private route: ActivatedRoute,
@@ -22,6 +23,7 @@ export class CardDetailComponent implements OnInit {
       this.scryfallService.getCard(id).subscribe(card => {
         this.card = card;
         this.legalities = card.legalities;
+        console.log(card)
       });
     } else {
       // Manejar el caso en el que id es null, por ejemplo redirigir a una página de error
