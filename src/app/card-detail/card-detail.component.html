@@ -1,4 +1,4 @@
-<div class="card-detail">
+<div class="card-detail-container">
     <div class="card-image">
         <img [src]="card.image_uris.normal" alt="{{ card.name }}">
     </div>
@@ -20,10 +20,10 @@
                         <th>Formato</th>
                         <th>Legalidad</th>
                     </tr>
-                    <tr *ngFor="let legality of card.legalities">
-                        <td>{{ legality.format }}</td>
-                        <td>{{ legality.legality }}</td>
-                    </tr>
+                    <tr *ngFor="let legality of legalities | keyvalue">
+                        <td>{{ legality.key }}</td>
+                        <td [ngClass]="{'legal': legality.value === 'legal', 'not-legal': legality.value !== 'legal'}">{{ replaceUnderscore(legality.value) }}</td>
+                    </tr> 
                 </table>
             </mat-expansion-panel>
         </mat-accordion>
