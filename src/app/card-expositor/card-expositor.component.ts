@@ -6,7 +6,6 @@ import { ScryfallService } from '../scryfall.service';
   templateUrl: './card-expositor.component.html',
   styleUrls: ['./card-expositor.component.scss']
 })
-
 export class CardExpositorComponent implements OnInit {
   cards: any[] = [];
 

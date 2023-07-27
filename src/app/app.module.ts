@@ -8,19 +8,25 @@ import { CardExpositorComponent } from './card-expositor/card-expositor.componen
 import { HttpClientModule } from '@angular/common/http';
 import { CardDetailComponent } from './card-detail/card-detail.component';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { CardSearchComponent } from './card-search/card-search.component';
+import { FormsModule } from '@angular/forms'; 
+
 
 @NgModule({
   declarations: [
     AppComponent,
     CardExpositorComponent,
-    CardDetailComponent
+    CardDetailComponent,
+    CardSearchComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MatExpansionModule
+    MatExpansionModule,
+    FormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
