@@ -20,4 +20,7 @@ export class ScryfallService {
   getCards(): Observable<any> {
     return this.http.get(`${this.baseUrl}/cards/search?q=set:m21&format`);
   }
+  getRandomCard(): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}/cards/random`);
+  }
 }

@@ -19,9 +19,21 @@ export class CardExpositorComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.query = params['query'];
-      this.scryfallService.searchCards(this.query).subscribe(response => {
-        this.cards = response.data;
-      });
+      if (this.query) {
+        this.scryfallService.searchCards(this.query).subscribe(response => {
+          this.cards = response.data;
+        });
+      } else {
+        this.loadRandomCards();
+      }
     });
+  }
+
+  loadRandomCards(): void {
+    for (let i = 0; i < 9; i++) {
+      this.scryfallService.getRandomCard().subscribe(response => {
+        this.cards.push(response);
+      });
+    }
   }
 }
