@@ -1,7 +1,7 @@
-<div class="search-container">
-    <input type="text" class="search-input" [(ngModel)]="query" name="query" required>
-    <button class="search-button">
-      <span class="material-icons">search</span>
-    </button>
-  </div>
-  
+<mat-form-field class="search-field" appearance="fill">
+  <mat-label>Buscar carta</mat-label>
+  <input matInput [(ngModel)]="query" (keyup.enter)="search()" placeholder="Escribe el nombre de la carta">
+  <button mat-icon-button matSuffix (click)="search()">
+    <mat-icon>search</mat-icon>
+  </button>
+</mat-form-field>

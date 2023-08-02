@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./card-search.component.scss']
 })
 export class CardSearchComponent implements OnInit {
-  query: string = ''; // Initialize query
+  query: string = '';
 
   constructor(private scryfallService: ScryfallService, private router: Router) { }
 
@@ -17,7 +17,9 @@ export class CardSearchComponent implements OnInit {
 
   search(): void {
     this.scryfallService.searchCards(this.query).subscribe(response => {
-      this.router.navigate(['/cards', response.data[0].id]);
+      if (response.data.length > 0) {
+        this.router.navigate(['/card', response.data[0].id]);
+      }
     });
   }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ScryfallService } from '../scryfall.service';
 
+
 @Component({
   selector: 'app-card-expositor',
   templateUrl: './card-expositor.component.html',
