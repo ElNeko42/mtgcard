@@ -5,7 +5,8 @@ import { CardExpositorComponent } from './card-expositor/card-expositor.componen
 
 const routes: Routes = [
   { path: '', component: CardExpositorComponent },
-  { path: 'card/:id', component: CardDetailComponent }
+  { path: 'card/:id', component: CardDetailComponent },
+  { path: 'search/:query', component: CardExpositorComponent },
 ];
 
 @NgModule({

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ScryfallService } from '../scryfall.service';
 import { Router } from '@angular/router';
+import { ScryfallService } from '../scryfall.service';
 
 @Component({
   selector: 'app-card-search',
@@ -10,16 +10,15 @@ import { Router } from '@angular/router';
 export class CardSearchComponent implements OnInit {
   query: string = '';
 
-  constructor(private scryfallService: ScryfallService, private router: Router) { }
+  constructor(
+    private router: Router,
+    private scryfallService: ScryfallService
+  ) { }
 
   ngOnInit(): void {
   }
 
   search(): void {
-    this.scryfallService.searchCards(this.query).subscribe(response => {
-      if (response.data.length > 0) {
-        this.router.navigate(['/card', response.data[0].id]);
-      }
-    });
+    this.router.navigate(['/search', this.query]);
   }
 }

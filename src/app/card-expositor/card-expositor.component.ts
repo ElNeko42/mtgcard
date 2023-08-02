@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ScryfallService } from '../scryfall.service';
-
 
 @Component({
   selector: 'app-card-expositor',
@@ -9,12 +9,19 @@ import { ScryfallService } from '../scryfall.service';
 })
 export class CardExpositorComponent implements OnInit {
   cards: any[] = [];
+  query: string = '';
 
-  constructor(private scryfallService: ScryfallService) { }
+  constructor(
+    private route: ActivatedRoute,
+    private scryfallService: ScryfallService
+  ) { }
 
   ngOnInit(): void {
-    this.scryfallService.getCards().subscribe(response => {
-      this.cards = response.data;
+    this.route.params.subscribe(params => {
+      this.query = params['query'];
+      this.scryfallService.searchCards(this.query).subscribe(response => {
+        this.cards = response.data;
+      });
     });
   }
 }
