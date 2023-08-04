@@ -16,7 +16,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatCardModule } from '@angular/material/card';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { LoginComponent } from './login/login.component';
     CardDetailComponent,
     CardSearchComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent, 
+    
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,9 @@ import { LoginComponent } from './login/login.component';
     MatButtonModule,
     MatIconModule,
     FormsModule,
-
+    ReactiveFormsModule,
+    MatCardModule,   
+     CommonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
